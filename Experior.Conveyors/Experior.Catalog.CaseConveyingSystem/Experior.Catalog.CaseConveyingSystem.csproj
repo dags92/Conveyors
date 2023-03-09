@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <UsingTask TaskName="Experior.Build" Architecture="x64" AssemblyFile="$(EXPERIOR7_BIN)\Experior.Build.dll" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC59521B-771B-4902-99F5-1027157F72BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Experior.Catalog.CaseConveyingSystem</RootNamespace>
+    <AssemblyName>Experior.Catalog.CaseConveyingSystem</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>C:\Xcelgo\Xcelgo Experior 7\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>7.3</LangVersion>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(EXPERIOR7_BIN)\MachineExpertTwin.exe</StartProgram>
+    <StartArguments>-config</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>$(EXPERIOR7_BIN)</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Experior.Core">
+      <HintPath>$(EXPERIOR7_BIN)Experior.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Experior.Interfaces">
+      <HintPath>$(EXPERIOR7_BIN)Experior.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Experior.Rendering.Interfaces">
+      <HintPath>$(EXPERIOR7_BIN)Experior.Rendering.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Experior.Utils.Feeder, Version=7.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\DEVELOPER\EXPERIOR\EXPERIOR 7\PhysX\bin\Debug\Experior.Utils.Feeder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemblies\Conveyors\Accumulation\Accumulation.cs" />
+    <Compile Include="Assemblies\Conveyors\Accumulation\Controller.cs" />
+    <Compile Include="Assemblies\Conveyors\Accumulation\CurveSection.cs" />
+    <Compile Include="Assemblies\Conveyors\Accumulation\ISection.cs" />
+    <Compile Include="Assemblies\Conveyors\Accumulation\SectionHandler.cs" />
+    <Compile Include="Assemblies\Conveyors\Accumulation\StraightSection.cs" />
+    <Compile Include="Assemblies\Conveyors\Alignment.cs" />
+    <Compile Include="Assemblies\Conveyors\BasicCurve.cs" />
+    <Compile Include="Assemblies\Conveyors\BasicStraight.cs" />
+    <Compile Include="Assemblies\Conveyors\Curve.cs" />
+    <Compile Include="Assemblies\Conveyors\Transfer.cs" />
+    <Compile Include="Assemblies\Equipment\BarcodeReader.cs" />
+    <Compile Include="Assemblies\Equipment\LiftingUnit.cs" />
+    <Compile Include="Assemblies\Conveyors\Merge.cs" />
+    <Compile Include="Assemblies\Conveyors\Spiral.cs" />
+    <Compile Include="Assemblies\Conveyors\Straight.cs" />
+    <Compile Include="Assemblies\Equipment\Pusher.cs" />
+    <Compile Include="Assemblies\Equipment\VerticalBladeStop.cs" />
+    <Compile Include="Assemblies\Equipment\SwitchSorter.cs" />
+    <Compile Include="Create.cs" />
+    <Compile Include="CaseConveyingSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Experior.Conveyor.Foundations\Experior.Conveyor.Foundations.csproj">
+      <Project>{199c8084-e051-4f0f-a910-3b443a214bc0}</Project>
+      <Name>Experior.Conveyor.Foundations</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\Add.svg" />
+    <EmbeddedResource Include="Icon\Copy.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\BackBase_Cylinder.stl" />
+    <EmbeddedResource Include="Mesh\Body_Cylinder.stl" />
+    <EmbeddedResource Include="Mesh\FrontBase_Cylinder.stl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\AlignmentRoller.png" />
+    <EmbeddedResource Include="Icon\CurveCCWBelt.png" />
+    <EmbeddedResource Include="Icon\CurveCCWRoller.png" />
+    <EmbeddedResource Include="Icon\CurveCCWStrap.png" />
+    <EmbeddedResource Include="Icon\CurveCWBelt.png" />
+    <EmbeddedResource Include="Icon\CurveCWRoller.png" />
+    <EmbeddedResource Include="Icon\CurveCWStrap.png" />
+    <EmbeddedResource Include="Icon\DivertBelt.png" />
+    <EmbeddedResource Include="Icon\DivertRoller.png" />
+    <EmbeddedResource Include="Icon\DivertStrap.png" />
+    <EmbeddedResource Include="Icon\LiftingUnit.png" />
+    <EmbeddedResource Include="Icon\MergeBelt.png" />
+    <EmbeddedResource Include="Icon\MergeRoller.png" />
+    <EmbeddedResource Include="Icon\MergeStrap.png" />
+    <EmbeddedResource Include="Icon\Pusher.png" />
+    <EmbeddedResource Include="Icon\SpiralBelt.png" />
+    <EmbeddedResource Include="Icon\SpiralRoller.png" />
+    <EmbeddedResource Include="Icon\SpiralStrap.png" />
+    <EmbeddedResource Include="Icon\StraightBelt.png" />
+    <EmbeddedResource Include="Icon\StraightRoller.png" />
+    <EmbeddedResource Include="Icon\StraightStrap.png" />
+    <EmbeddedResource Include="Icon\SwitchSorter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\Calibrate.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\Default.dae" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\BoxXcelgo_Texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Texture\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\BarcodeReader.stl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\BarcodeReader.png" />
+    <EmbeddedResource Include="Icon\VerticalBladeStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\Box.png" />
+    <EmbeddedResource Include="Icon\Pallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\AccumulationBelt.png" />
+    <EmbeddedResource Include="Icon\AccumulationRoller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\BarcodeReader.dae" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\256 palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mesh\ToteLoad.x" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="PluginSigning" AfterTargets="AfterBuild">
+    <Message Importance="High" Text="Signing plugin $(TargetFileName)..." />
+    <Experior.Build AssemblyFileLocation="$(OutputPath)$(TargetFileName)">
+    </Experior.Build>
+  </Target>
+  <Target Name="Export" AfterTargets="PluginSigning">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)bin\$(ConfigurationName)\" SkipUnchangedFiles="true" />
+    <Message Importance="High" Text="Exporting plugin $(TargetFileName) to $(SolutionDir)bin\$(ConfigurationName)\" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
